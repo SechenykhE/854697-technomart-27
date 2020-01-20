@@ -1,7 +1,7 @@
 # Личный проект «Техномарт»
 
 * Студент: [Елена Сеченых](https://up.htmlacademy.ru/htmlcss/27/user/854697).
-* Наставник: `Неизвестно`.
+* Наставник: [Анна Лисененкова](https://htmlacademy.ru/profile/ankhena).
 
 ---
 
