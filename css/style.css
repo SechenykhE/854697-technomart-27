@@ -1,4 +1,5 @@
 body {
+  min-width: 960px;
   margin:0;
   padding: 0;
 
@@ -11,18 +12,22 @@ body {
   background-color: #ffffff;
 }
 
-html { box-sizing: border-box;
+html {
+  box-sizing: border-box;
 }
 
-*, *::before, *::after { box-sizing: inherit;
+*, *::before, *::after {
+  box-sizing: inherit;
 }
 
 a {
   text-decoration: none;
 }
 
-body {
-  min-width: 960px;
+.container {
+  width: 940px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .page-header {
@@ -37,7 +42,7 @@ body {
   background-color: #f4f7f9;
 }
 
-.header-top {
+.header-panel {
   margin-bottom: 46px;
   width: 100%;
 
@@ -48,16 +53,14 @@ body {
   background-color: #293449;
 }
 
-.header-top-container {
+.header-panel-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 940px;
   height: 42px;
-  margin: 0 auto;
 }
 
-.header-top-left {
+.header-panel-left {
   display: flex;
   align-items: center;
 }
@@ -145,15 +148,14 @@ input[type="search"]::placeholder {
   background-color: #518534;
 }
 
-.header-middle {
+.header-information {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  width: 940px;
   min-height: 112px;
 }
 
-p.slogan {
+.slogan {
   margin: 0;
   padding: 0;
   padding-left: 52px;
@@ -222,7 +224,6 @@ p.slogan {
   justify-content: space-around;
   align-items: center;
 
-  width: 940px;
   height: 55px;
   margin: 0;
   padding: 0;
@@ -266,6 +267,7 @@ p.slogan {
   background-color: #ee3643;
   border: 0;
 }
+
 .button:hover,
 .button:focus {
   background-color: #ca2c37;
@@ -276,17 +278,15 @@ p.slogan {
 }
 
 .promo-block {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  width: 940px;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 53px;
   padding-top: 59px;
 
   font-family: "Cuprum", Arial sans-serif;
   color: #ffffff;
+}
+
+.promo-block-row {
+  display: flex;
 }
 
 .promo-size {
@@ -300,32 +300,32 @@ p.slogan {
   margin-right: 0;
 }
 
+.promo-block-columns {
+  display: flex;
+}
+
 .promo-materials {
   background-color: #ffbf47;
-  order: 0;
+}
+
+.promo-block-column {
+  margin-right: 0;
 }
 
 .promo-tools {
   background-color: #3bbce3;
-  order: 1;
 }
 
 .promo-technics {
   background-color: #dc91d8;
-  order: 2;
-  margin-right: 0;
 }
 
 .promo-discount {
   background-color: #8ed78f;
-  order: 4;
-  margin-right: 0;
 }
 
 .promo-delivery {
   background-color: #ffc047;
-  order: 5;
-  margin-right: 0;
 }
 
 .promo-block h3 {
@@ -358,30 +358,27 @@ p.slogan {
 .slider {
   width: 620px;
   margin-right: 20px;
-  order: 3;
 }
 
 .slider ul {
   margin: 0;
   padding: 0;
   list-style: none;
-  }
+}
 
 .slider-item {
+  /*position: relative;*/
   background-color: #f2f6f8;
 }
 
-.slider-item img {
-  z-index: 1;
+.slider-item img,
+.slider-item .button{
+  /*position: absolute;*/
 }
 
 .slider-text {
+  /*position: absolute;*/
   background-color: rgba(0, 0, 0, 0.25);
-  z-index: 2;
-}
-
-.slider-item a {
-  z-index: 2;
 }
 
 .slider-text h3 {
@@ -393,12 +390,6 @@ p.slogan {
 .slider-text p {
   font-size: 18px;
   line-height: 24px;
-}
-
-.popular {
-  margin-left: auto;
-  margin-right: auto;
-  width: 940px;
 }
 
 .products-popular {
@@ -588,11 +579,10 @@ a.button-border {
 }
 
 .service {
-  width: 940px;
   height: 522px;
-  margin: 0 auto;
   padding-top: 68px;
 }
+
 .service h2 {
   margin: 0;
   padding: 0;
@@ -611,10 +601,13 @@ a.button-border {
   line-height: 24px;
   color: #000000;
   font-weight: normal;
+
+  margin-bottom: 75px;
 }
 
 .service-list {
   list-style: none;
+  margin-right: 80px;
 }
 
 .service-container-column {
@@ -658,9 +651,6 @@ p.service-title {
 
 .index-columns {
   display: flex;
-  width: 940px;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 86px;
 
 }
@@ -722,15 +712,10 @@ p.service-title {
   padding: 0;
 }
 
-.footer-top {
+.footer-nav {
   width: 100%;
   height: 193px;
   background-color: #32425c;
-}
-
-.footer-top-container {
-  width: 940px;
-  margin: 0 auto;
 }
 
 .footer-navigation,
@@ -748,7 +733,7 @@ p.service-title {
   box-shadow: inset 0 -5px 0 0 rgba(0, 0, 0, 0.24);
 }
 
-.footer-top-row1 {
+.footer-nav-row1 {
   display: flex;
   margin-bottom: 33px;
 }
@@ -758,7 +743,7 @@ p.service-title {
   margin-left: auto;
 }
 
-.footer-top-row2 {
+.footer-nav-row2 {
   display: flex;
 }
 
@@ -799,20 +784,18 @@ p.service-title {
   text-decoration: none;
 }
 
-.footer-bottom {
+.footer-information {
   width: 100%;
   background-color: #293449;
   font-size: 16px;
 }
 
-.footer-bottom-container {
+.footer-information-container {
   display: flex;
   justify-content: space-between;
-  width: 940px;
-  margin: 0 auto;
   padding-top: 40px;
 }
-.footer-bottom .footer-social {
+.footer-information .footer-social {
   list-style: none;
 }
 
@@ -925,8 +908,6 @@ ul.user-cabinet {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin: 0 auto;
-  width: 940px;
 }
 
 .page-title {
@@ -967,8 +948,6 @@ ul.user-cabinet {
 .catalog-columns {
   display: flex;
   justify-content: space-between;
-  margin: 0 auto;
-  width: 940px;
 }
 
 .filters {
@@ -1124,8 +1103,6 @@ button.button-filter:active {
 }
 
 .about-perforators {
-  width: 940px;
-  margin: 0 auto;
   padding-top: 68px;
   padding-bottom: 73px;
 }
@@ -1184,3 +1161,6 @@ button.button-filter:active {
   overflow: hidden;
 }
 
+.not-displayed {
+  display: none;
+}

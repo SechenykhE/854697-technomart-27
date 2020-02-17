@@ -9,9 +9,9 @@
   </head>
   <body>
     <header class="page-header">
-      <div class="header-top">
-        <div class="header-top-container">
-          <div class="header-top-left">
+      <div class="header-panel">
+        <div class="header-panel-container container">
+          <div class="header-panel-left">
             <a class="header-logo">
               <img src="img/logo-technomart.svg" width="108" height="18" alt="Логотип Техномарт">
             </a>
@@ -29,7 +29,7 @@
         </div>
       </div>
 
-      <div class="header-middle">
+      <div class="header-information container">
         <p class="slogan">Интернет-магазин<br>
           строительных материалов<br>
           и инструментов для ремонта</p>
@@ -49,7 +49,7 @@
         </ul>
       </div>
 
-      <nav class="header-bottom">
+      <nav class="main-nav container">
         <ul class="site-navigation">
           <li><a>Главная</a></li>
           <li><a href="">Компания</a></li>
@@ -65,54 +65,60 @@
     <main class="page-main">
       <h1 class="visually-hidden">Техномарт</h1>
 
-      <section class="promo-block">
+      <section class="promo-block container">
         <h2 class="visually-hidden">Промо-блок</h2>
 
-        <div class="promo-materials promo-size">
-          <h3>Материалы</h3>
-          <a href="">На любой вкус</a>
-        </div>
-        <div class="promo-tools promo-size">
-          <h3>Инструменты</h3>
-          <a href="">На все случаи</a>
-        </div>
-        <div class="promo-technics promo-size">
-          <h3>Техника</h3>
-          <a href="">Для стройки</a>
-        </div>
-        <div class="promo-discount promo-size">
-          <h3>Скидка 50%</h3>
-          <a href="">На 350 товаров</a>
-        </div>
-        <div class="promo-delivery promo-size">
-          <h3>Доставка</h3>
-          <a href="">Бесплатно</a>
+        <div class="promo-block-row">
+          <div class="promo-materials promo-size">
+            <h3>Материалы</h3>
+            <a href="">На любой вкус</a>
+          </div>
+          <div class="promo-tools promo-size">
+            <h3>Инструменты</h3>
+            <a href="">На все случаи</a>
+          </div>
+          <div class="promo-technics promo-size">
+            <h3>Техника</h3>
+            <a href="">Для стройки</a>
+          </div>
         </div>
 
-        <div class="slider">
-          <ul>
-            <li class="slider-item">
-              <img src="img/slider-2.jpg" width="620" height="266" alt="Мужчина с дрелью">
-              <div class="slider-text">
-                <h3>Дрели</h3>
-                <p class="slider-p">Соседям на радость!</p>
-              </div>
-              <a class="button" href="catalog.html">Открыть каталог</a>
-            </li>
-            <li class="slider-item">
-              <img src="img/slider-1.jpg" width="620" height="266" alt="Мужчина с перфоратором">
-              <div class="slider-text">
-                <h3>Перфораторы</h3>
-                <p>Настоящие мужские игрушки</p>
-              </div>
-              <a class="button" href="catalog.html">Открыть каталог</a>
-            </li>
-          </ul>
+        <div class="promo-block-columns">
+          <div class="slider">
+            <ul>
+              <li class="slider-item">
+                <img src="img/slider-2.jpg" width="620" height="266" alt="Мужчина с дрелью">
+                <div class="slider-text">
+                  <h3>Дрели</h3>
+                  <p class="slider-p">Соседям на радость!</p>
+                </div>
+                <a class="button" href="catalog.html">Открыть каталог</a>
+              </li>
+              <li class="slider-item not-displayed">
+                <img src="img/slider-1.jpg" width="620" height="266" alt="Мужчина с перфоратором">
+                <div class="slider-text">
+                  <h3>Перфораторы</h3>
+                  <p>Настоящие мужские игрушки</p>
+                </div>
+                <a class="button" href="catalog.html">Открыть каталог</a>
+              </li>
+            </ul>
+          </div>
 
+          <div class="promo-block-column">
+            <div class="promo-discount promo-size">
+              <h3>Скидка 50%</h3>
+              <a href="">На 350 товаров</a>
+            </div>
+            <div class="promo-delivery promo-size">
+              <h3>Доставка</h3>
+              <a href="">Бесплатно</a>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="popular products-popular">
+      <section class="popular container products-popular">
         <header>
           <h2>Популярные товары:</h2>
           <a class="button" href="">Все популярные товары</a>
@@ -191,7 +197,7 @@
         </ul>
       </section>
 
-      <section class="popular manufacturers-popular">
+      <section class="popular container manufacturers-popular">
         <header>
           <h2>Популярные производители:</h2>
           <a class="button" href="">Все производители</a>
@@ -241,7 +247,7 @@
       </section>
 
       <div class="service-container">
-        <section class="service">
+        <section class="service container">
           <h2>Сервисы</h2>
           <p>Хороший интернет-магазин отличается от плохого не только ценами!<br>
             Мы стараемся изо всех сил, чтобы сделать ваши покупки приятными.</p>
@@ -265,7 +271,7 @@
                   Ведь мы неплохо заработаем,<br>
                   поднимая его на ваш этаж!</p>
               </div>
-              <div class="service-guarantee">
+              <div class="service-guarantee not-displayed">
                 <p class="service-title">Гарантия</p>
                 <p class="service-text">Если купленный у нас товар поломается или заискрит,<br>
                   а также в случае пожара, спровоцированного его возгоранием,<br>
@@ -273,7 +279,7 @@
                   сгоревший товар на новый.<br>
                   Дом уж восстановите как-нибудь сами.</p>
               </div>
-              <div class="service-credit">
+              <div class="service-credit not-displayed">
                 <p class="service-title">Кредит</p>
                 <p class="service-text">Залезть в долговую яму стало проще!<br>
                   Кредитные консультанты придут вам на помощь.</p>
@@ -284,7 +290,7 @@
         </section>
       </div>
 
-      <div class="index-columns">
+      <div class="index-columns container">
         <section class="about-company">
           <h2>КОМПАНИЯ «Техномарт»</h2>
           <p>Настоящий мужской шоппинг начинается здесь! Огромный выбор товаров для ремонта и строительства не оставит равнодушными любителей сэкономить на гастарбайтерах.</p>
@@ -311,9 +317,9 @@
     </main>
 
     <footer class="page-footer">
-      <div class="footer-top">
-        <div class="footer-top-container">
-          <div class="footer-top-row1">
+      <div class="footer-nav">
+        <div class="container">
+          <div class="footer-nav-row1">
             <a class="footer-logo" href="index.html">
               <img src="img/logo-technomart.svg" width="137" height="22" alt="Логотип Техномарт">
             </a>
@@ -327,7 +333,7 @@
             </ul>
           </div>
 
-          <div class="footer-top-row2">
+          <div class="footer-nav-row2">
             <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8<br>
               +7 (812) 555-05-55</p>
 
@@ -341,8 +347,8 @@
         </div>
       </div>
 
-      <div class="footer-bottom">
-        <div class="footer-bottom-container">
+      <div class="footer-information">
+        <div class="footer-information-container container">
           <p>© 2010–2019 Компания «Техномарт»<br>
             Все права защищены</p>
 
