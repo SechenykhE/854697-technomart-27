@@ -16,7 +16,7 @@
               <img src="img/logo-technomart.svg" width="108" height="18" alt="Логотип Техномарт">
             </a>
             <form class="form-search" action="https://echo.htmlacademy.ru" method="get">
-              <label class="visually-hidden" for="search">Поиск:</label>
+              <input class="search" id="search" type="search" placeholder="Поиск:">
               <label for="search">
                 <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" enable-background="new 0 0 17 17" xml:space="preserve">
                   <g>
@@ -26,7 +26,7 @@
                   </g>
                 </svg>
               </label>
-              <input class="search" id="search" type="search" placeholder="Поиск:">
+              <label class="visually-hidden" for="search">Поиск:</label>
             </form>
           </div>
 
@@ -36,7 +36,7 @@
                 <path fill="#E72C2D" d="M14,15c0,0.55-0.368,0.741-0.818,0.426l-5.363-3.765c-0.45-0.315-1.187-0.315-1.637,0l-5.364,3.765
                     	C0.368,15.741,0,15.55,0,15V1c0-0.55,0.45-1,1-1h12c0.55,0,1,0.45,1,1V15z"/>
               </svg>
-              Закладки
+              Закладки: <span>0</span>
             </a>
             <a class="basket basket-active" href="">
               <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15" enable-background="new 0 0 15 15" xml:space="preserve">
@@ -46,7 +46,7 @@
                   <polygon points="15,2 4.07,2 3.648,0 0,0 0,2 2.031,2 4.016,11 15,11 15,9 9.441,9 15,6.951 	"/>
                 </g>
               </svg>
-              Корзина
+              Корзина: <span>10</span>
             </a>
             <a class="order" href="">Оформить заказ</a>
           </div>
@@ -54,8 +54,8 @@
       </div>
 
       <div class="header-information container">
-        <p class="slogan">Интернет-магазин<br>
-          строительных материалов<br>
+        <p class="slogan">Интернет-магазин
+          строительных материалов &nbsp;
           и инструментов для ремонта</p>
 
         <div class="header-contact">
@@ -70,7 +70,7 @@
                 c1.118-0.903,1.864-2.477,1.864-4.278C14.021,2.276,12.221,0,10,0S5.979,2.276,5.979,5.083c0,1.801,0.746,3.374,1.863,4.277
                 c0.253,0.798,0.141,1.915-0.517,2.416c-0.95,0.724-3.063,1.654-5.207,2.39S0,18,0,18h20C20,18,20.025,14.901,17.881,14.166z"/>
               </svg>
-            <span>Равшан Джамшутович</span>
+            Равшан Джамшутович
           </a>
           <a class="logout" href="">
             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="17" viewBox="0 0 21 17">
@@ -123,27 +123,24 @@
       <div class="catalog-columns container">
         <section class="filters">
           <h2 class="filters-background">Фильтр:</h2>
-          <div class="filters-price">
-            <p>Цена:</p>
-            <div class="range-slider filters-background">
-              <div class="range-slider-track">
-                <div class="range-slider-pin range-slider-pin-min"></div>
-                <div class="range-slider-pin range-slider-pin-max"></div>
+          <form class="filter price" method="get" action="https://echo.htmlacademy.ru">
+            <fieldset class="filter-item">
+              <legend>Цена:</legend>
+              <div class="range-filter">
+                <div class="range-controls">
+                  <div class="scale">
+                    <div class="bar"></div>
+                  </div>
+                  <div class="toggle toggle-min"></div>
+                  <div class="toggle toggle-max"></div>
+                </div>
+                <div class="price-controls">
+                  <label class="min-price"><span class="visually-hidden">от</span> <input name="min-price" type="number" value="0"></label>
+                  <label class="max-price"><span class="visually-hidden">до</span> <input name="max-price" type="number" value="30000"></label>
+                </div>
               </div>
-              <input type="number" value="0" name="min">
-              <input type="number" value="0" name="max">
-            </div>
-            <ul>
-              <li class="filters-background">
-                <label class="visually-hidden" for="from">от</label>
-                <input type="number" id="from" name="from" placeholder="0">
-              </li>
-              <li class="filters-background">
-                <label class="visually-hidden" for="to">до</label>
-                <input type="number" id="to" name="to" placeholder="30000">
-              </li>
-            </ul>
-          </div>
+            </fieldset>
+          </form>
 
           <form class="filter" method="get" action="https://echo.htmlacademy.ru">
             <fieldset>
@@ -190,7 +187,7 @@
 
         <div class="sorting-catalog">
           <section class="sorting filters-background">
-            <h2>Сортировака:</h2>
+            <h2>Сортировка:</h2>
             <ul class="sorting-active">
               <li>
                 <a class="active">По цене</a>
@@ -203,17 +200,23 @@
               </li>
             </ul>
             <ul class="sorting-radio">
-              <li>
-                <a>
-                  <label class="visually-hidden" for="filter-up">По возрастанию</label>
+              <li class="sorting-radio-item">
                   <input class="visually-hidden sorting-radio-up" type="radio" name="sorting" value="up" id="filter-up" checked>
-                </a>
+                  <label for="filter-up">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
+                      <polygon fill="#231F20" points="5.5,0 0,10 11,10 "/>
+                    </svg>
+                  </label>
+                  <label class="visually-hidden" for="filter-up">По возрастанию</label>
               </li>
-              <li>
-                <a>
-                  <label class="visually-hidden" for="filter-down">По убыванию</label>
+              <li class="sorting-radio-item">
                   <input class="visually-hidden sorting-radio-down" type="radio" name="sorting" value="down" id="filter-down">
-                </a>
+                  <label for="filter-down">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
+                      <polyline fill="#231F20" points="5.5,10 0,0 11,0 "/>
+                    </svg>
+                  </label>
+                  <label class="visually-hidden" for="filter-down">По убыванию</label>
               </li>
             </ul>
           </section>
@@ -230,9 +233,7 @@
                   </h3>
                 </a>
                 <span class="products-discount">22500 Р.</span>
-                <p class="button red-arrow">
-                  <a href="">15500 Р.</a>
-                </p>
+                <p class="button red-arrow">15500 Р.</p>
                 <div class="flag flag-new"></div>
                 <div class="button-list">
                   <a class="button button-green" href="">Купить</a>
@@ -248,9 +249,7 @@
                   </h3>
                 </a>
                 <span class="products-discount">30500 Р.</span>
-                <p class="button red-arrow">
-                  <a href="">25500 Р.</a>
-                </p>
+                <p class="button red-arrow">25500 Р.</p>
                 <div class="flag flag-new"></div>
                 <div class="button-list">
                   <a class="button button-green" href="">Купить</a>
@@ -266,9 +265,7 @@
                   </h3>
                 </a>
                 <span class="products-discount hide">12500 P.</span>
-                <p class="button red-arrow">
-                  <a href="">12500 Р.</a>
-                </p>
+                <p class="button red-arrow">12500 Р.</p>
                 <div class="flag flag-new"></div>
                 <div class="button-list">
                   <a class="button button-green" href="">Купить</a>
@@ -284,9 +281,7 @@
                   </h3>
                 </a>
                 <span class="products-discount">22500 Р.</span>
-                <p class="button red-arrow">
-                  <a href="">15500 Р.</a>
-                </p>
+                <p class="button red-arrow">15500 Р.</p>
                 <div class="flag flag-new"></div>
                 <div class="button-list">
                   <a class="button button-green" href="">Купить</a>
@@ -302,9 +297,7 @@
                   </h3>
                 </a>
                 <span class="products-discount">30500 Р.</span>
-                <p class="button red-arrow">
-                  <a href="">25500 Р.</a>
-                </p>
+                <p class="button red-arrow">25500 Р.</p>
                 <div class="flag flag-new"></div>
                 <div class="button-list">
                   <a class="button button-green" href="">Купить</a>
@@ -320,9 +313,7 @@
                   </h3>
                 </a>
                 <span class="products-discount hide">12500 P.</span>
-                <p class="button red-arrow">
-                  <a href="">12500 Р.</a>
-                </p>
+                <p class="button red-arrow">12500 Р.</p>
                 <div class="flag flag-new"></div>
                 <div class="button-list">
                   <a class="button button-green" href="">Купить</a>
@@ -338,9 +329,7 @@
                   </h3>
                 </a>
                 <span class="products-discount">22500 Р.</span>
-                <p class="button red-arrow">
-                  <a href="">15500 Р.</a>
-                </p>
+                <p class="button red-arrow">15500 Р.</p>
                 <div class="flag flag-new"></div>
                 <div class="button-list">
                   <a class="button button-green" href="">Купить</a>
@@ -356,9 +345,7 @@
                   </h3>
                 </a>
                 <span class="products-discount">30500 Р.</span>
-                <p class="button red-arrow">
-                  <a href="">25500 Р.</a>
-                </p>
+                <p class="button red-arrow">25500 Р.</p>
                 <div class="flag flag-new"></div>
                 <div class="button-list">
                   <a class="button button-green" href="">Купить</a>
@@ -374,9 +361,7 @@
                   </h3>
                 </a>
                 <span class="products-discount hide">12500 P.</span>
-                <p class="button red-arrow">
-                  <a href="">12500 Р.</a>
-                </p>
+                <p class="button red-arrow">12500 Р.</p>
                 <div class="flag flag-new"></div>
                 <div class="button-list">
                   <a class="button button-green" href="">Купить</a>
@@ -491,7 +476,7 @@
       </div>
     </footer>
 
-    <div class="add-basket">
+    <div class="add-basket not-displayed">
       <p>Товар добавлен в корзину!</p>
       <div class="button-background">
         <div class="button-position">
