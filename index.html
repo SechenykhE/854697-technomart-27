@@ -184,6 +184,7 @@
               <a class="button button-green" href="#">Купить</a>
               <a class="button button-border" href="#">В закладки</a>
             </div>
+
           </li>
           <li class="products-item">
             <a href="#">
@@ -446,11 +447,11 @@
         <div class="name-email">
           <p>
             <label for="input-name">Ваше имя:</label>
-            <input id="input-name" type="text" name="name" placeholder="Имя Фамилия">
+            <input id="input-name" type="text" name="name" placeholder="Имя Фамилия" required>
           </p>
           <p>
             <label for="input-mail">Ваш e-mail:</label>
-            <input id="input-mail" type="email" name="e-mail" placeholder="email@example.com">
+            <input id="input-mail" type="email" name="e-mail" placeholder="email@example.com" required>
           </p>
         </div>
         <p>
@@ -469,5 +470,67 @@
       <img src="img/map-big.png" width="940" height="446" alt="Наш офис по адресу улица Большая Конюшенная дом 19">
       <button class="modal-close" type="button"><span class="visually-hidden">Закрыть</span></button>
     </section>
+
+    <script>
+      var link = document.querySelector(".write-us");
+      var popup = document.querySelector(".modal-email");
+      var close = document.querySelector(".modal-close");
+      var userName = popup.querySelector("[name=name]");
+      var form = popup.querySelector("form");
+      var email = popup.querySelector("[name=e-mail]");
+      var message = popup.querySelector("textarea");
+
+      var isStorageSupport = true;
+      var storageName = "";
+      var storageEmail = "";
+
+      try {
+        storageName = localStorage.getItem("userName");
+        storageEmail = localStorage.getItem("email");
+      } catch (err) {
+        isStorageSupport = false;
+      }
+
+      link.addEventListener("click", function (evt) {
+        evt.preventDefault();
+        popup.classList.add("modal-show");
+
+        if (storageName) {
+          userName.value = storageName;
+          email.value = storageEmail;
+          message.focus();
+        } else {
+          userName.focus();
+        }
+      });
+
+      close.addEventListener("click", function (evt) {
+        evt.preventDefault();
+        popup.classList.remove("modal-show");
+      });
+
+      form.addEventListener("submit", function(evt) {
+        if (!userName.value || !email.value) {
+        evt.preventDefault();
+        console.log("Нужно ввести имя и почту");
+        } else {
+          if (isStorageSupport) {
+            localStorage.setItem("userName", userName.value);
+            localStorage.setItem("email", email.value);
+          }
+        }
+      });
+
+      window.addEventListener("keydown", function (evt) {
+        if (evt.keyCode === 27) {
+          if (popup.classList.contains("modal-show")) {
+            evt.preventDefault();
+            popup.classList.remove("modal-show");
+          }
+        }
+      });
+
+    </script>
+
   </body>
 </html>
