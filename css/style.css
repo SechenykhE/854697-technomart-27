@@ -1056,7 +1056,7 @@ a.button-border {
   width: 135px;
   padding-left: 10px;
   padding-right: 10px;
-  padding-top: 7px;
+  padding-top: 9px;
 
   background-color: transparent;
   border: 3px solid #63a63e;
@@ -1092,7 +1092,7 @@ a.button-border {
 }
 
 .products-item:hover .button-list,
-.products-item:focus-within .button-list{
+.products-item:focus-within .button-list {
   opacity: 1;
 }
 
@@ -1189,6 +1189,11 @@ a.button-border {
   overflow: hidden;
 }
 
+.service.container {
+  width: 960px;
+  padding-left: 10px;
+}
+
 .service h2 {
   margin: 0;
   margin-bottom: 27px;
@@ -1234,7 +1239,7 @@ a.button-border {
 }
 
 .service-column div {
-  margin-bottom: 106px;
+  margin-bottom: 104px;
 }
 
 .service-container-column img {
@@ -1272,7 +1277,7 @@ a.button-border {
   background-color: #293449;
 }
 
-.service-item button:active {
+.service .service-button.service-button-active {
   color: #32425c;
 
   background-color: #ffffff;
@@ -1346,7 +1351,7 @@ a.button-border {
 
   position: absolute;
   top: -4px;
-  left: 164px;
+  left: 165px;
 
   width: 465px;
   height: 285px;
@@ -1726,10 +1731,10 @@ p.feedback {
 }
 
 .modal-email {
-  display: none;
+  display: block;
 
   position: fixed;
-  top: 120px;
+  top: -2000px;
   left: 50%;
   z-index: 3;
 
@@ -2070,6 +2075,7 @@ p.feedback {
   position: absolute;
   top: 16px;
   right: 9px;
+  z-index: 3;
 
   width: 21px;
   height: 21px;
@@ -2083,10 +2089,10 @@ p.feedback {
 }
 
 .modal-map {
-  display: none;
+  display: block;
 
   position: fixed;
-  top: 120px;
+  top: -2000px;
   left: 50%;
 
   width: 940px;
@@ -2099,7 +2105,19 @@ p.feedback {
 }
 
 .modal-map img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
   width: 100%;
+}
+
+.modal-map iframe {
+  position: relative;
+  z-index: 2;
+
+  border: none;
 }
 
 .catalog-page .basket-active {
@@ -2896,10 +2914,10 @@ button.button-filter:active {
 }
 
 .add-basket {
-  display: none;
+  display: block;
 
   position: fixed;
-  top: 120px;
+  top: -2000px;
   left: 50%;
 
   width: 620px;
@@ -3006,14 +3024,15 @@ button.button-filter:active {
 }
 
 @keyframes bounce {
-  0% { transform: translateY(-2000px); }
-  70% { transform: translateY(30px); }
-  90% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
+  0% { top: -2000px; }
+  70% { top: 150px; }
+  90% { top: 110px; }
+  100% { top: 120px; }
 }
 
 .modal-show {
   display: block;
+  top: 120px;
   animation-name: bounce;
   animation-duration: 0.6s;
 }
@@ -3025,7 +3044,18 @@ button.button-filter:active {
 }
 
 .modal-error {
-  display: block;
   animation-name: shake;
+  animation-duration: 0.6s;
+}
+
+@keyframes bounce-close {
+  0% { top: 120px; }
+  10% { top: 110px; }
+  30% { top: 150px; }
+  100% { top: -2000px; }
+}
+
+.modal-show-close {
+  animation-name: bounce-close;
   animation-duration: 0.6s;
 }

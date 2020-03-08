@@ -123,14 +123,6 @@
         <div class="promo-block-columns">
           <div class="slider">
             <ul>
-              <li class="slider-item">
-                <img src="img/slider-2.jpg" width="620" height="266" alt="Мужчина с дрелью">
-                <div class="slider-text">
-                  <h3>Дрели</h3>
-                  <p class="slider-p">Соседям на радость!</p>
-                </div>
-                <a class="button" href="catalog.html">Открыть каталог</a>
-              </li>
               <li class="slider-item not-displayed">
                 <img src="img/slider-1.jpg" width="620" height="266" alt="Мужчина с перфоратором">
                 <div class="slider-text">
@@ -139,12 +131,20 @@
                 </div>
                 <a class="button" href="catalog.html">Открыть каталог</a>
               </li>
+              <li class="slider-item">
+                <img src="img/slider-2.jpg" width="620" height="266" alt="Мужчина с дрелью">
+                <div class="slider-text">
+                  <h3>Дрели</h3>
+                  <p class="slider-p">Соседям на радость!</p>
+                </div>
+                <a class="button" href="catalog.html">Открыть каталог</a>
+              </li>
             </ul>
-            <div class="slider-nav-back" title="назад"></div>
-            <div class="slider-nav-next" title="вперед"></div>
+            <div class="slider-nav-back" title="назад" onclick="minusSlide()"></div>
+            <div class="slider-nav-next" title="вперед" onclick="plusSlide()"></div>
             <div class="slider-dots">
-              <div class="button-dot"></div>
-              <div class="button-dot button-dot-checked"></div>
+              <div class="button-dot" onclick="currentSlide(1)"></div>
+              <div class="button-dot button-dot-checked" onclick="currentSlide(2)"></div>
             </div>
           </div>
 
@@ -294,25 +294,25 @@
           <div class="service-container-column">
             <ul class="service-list">
               <li class="service-item">
-                <button type="button">Доставка</button>
+                <button class="service-button service-button-active" type="button" onclick="currentSlideService(1)">Доставка</button>
               </li>
               <li class="service-item">
-                <button type="button">Гарантия</button>
+                <button class="service-button" type="button" onclick="currentSlideService(2)">Гарантия</button>
               </li>
               <li class="service-item">
-                <button type="button">Кредит</button>
+                <button class="service-button" type="button" onclick="currentSlideService(3)">Кредит</button>
               </li>
             </ul>
             <img src="img/gradient.png" width="10" height="279" alt="">
             <div class="service-column">
-              <div class="service-delivery">
+              <div class="service-delivery slider-service">
                 <p class="service-title">Доставка</p>
                 <p class="service-text">Мы с удовольствием доставим ваш товар прямо<br>
                   к вашему подъезду совершенно бесплатно!
                   Ведь мы неплохо заработаем,<br>
                   поднимая его на ваш этаж!</p>
               </div>
-              <div class="service-guarantee not-displayed">
+              <div class="service-guarantee slider-service not-displayed">
                 <p class="service-title">Гарантия</p>
                 <p class="service-text">Если купленный у нас товар поломается или заискрит,<br>
                   а также в случае пожара, спровоцированного его возгоранием,
@@ -320,7 +320,7 @@
                   сгоревший товар на новый.<br>
                   Дом уж восстановите как-нибудь сами.</p>
               </div>
-              <div class="service-credit not-displayed">
+              <div class="service-credit slider-service not-displayed">
                 <p class="service-title">Кредит</p>
                 <p class="service-text">Залезть в долговую яму стало проще!<br>
                   Кредитные консультанты придут вам на помощь.</p>
@@ -443,7 +443,7 @@
 
     <section class="modal-email">
       <h2 class="visually-hidden">Напишите нам</h2>
-      <form class="form-email" action="https://echo.htmlacademy.ru" method="post">
+      <form class="form-email" action="https://echo.htmlacademy.ru" method="post" novalidate>
         <div class="name-email">
           <p>
             <label for="input-name">Ваше имя:</label>
@@ -467,72 +467,15 @@
 
     <section class="modal-map">
       <h2 class="visually-hidden">Карта</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1998.5991043651609!2d30.320894616486502!3d59.93879418187622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696310fca5ba729%3A0xea9c53d4493c879f!2z0JHQvtC70YzRiNCw0Y8g0JrQvtC90Y7RiNC10L3QvdCw0Y8g0YPQuy4sIDE5LCDQodCw0L3QutGCLdCf0LXRgtC10YDQsdGD0YDQsywgMTkxMTg2!5e0!3m2!1sru!2sru!4v1583601836199!5m2!1sru!2sru" width="940" height="446" style="border:0;" allowfullscreen=""></iframe>
       <img src="img/map-big.png" width="940" height="446" alt="Наш офис по адресу улица Большая Конюшенная дом 19">
       <button class="modal-close" type="button"><span class="visually-hidden">Закрыть</span></button>
     </section>
 
-    <script>
-      var link = document.querySelector(".write-us");
-      var popup = document.querySelector(".modal-email");
-      var close = document.querySelector(".modal-close");
-      var userName = popup.querySelector("[name=name]");
-      var form = popup.querySelector("form");
-      var email = popup.querySelector("[name=e-mail]");
-      var message = popup.querySelector("textarea");
-
-      var isStorageSupport = true;
-      var storageName = "";
-      var storageEmail = "";
-
-      try {
-        storageName = localStorage.getItem("userName");
-        storageEmail = localStorage.getItem("email");
-      } catch (err) {
-        isStorageSupport = false;
-      }
-
-      link.addEventListener("click", function (evt) {
-        evt.preventDefault();
-        popup.classList.add("modal-show");
-
-        if (storageName) {
-          userName.value = storageName;
-          email.value = storageEmail;
-          message.focus();
-        } else {
-          userName.focus();
-        }
-      });
-
-      close.addEventListener("click", function (evt) {
-        evt.preventDefault();
-        popup.classList.remove("modal-show");
-        popup.classList.remove("modal-error");
-      });
-
-      form.addEventListener("submit", function(evt) {
-        if (!userName.value || !email.value) {
-        evt.preventDefault();
-        popup.classList.add("modal-error");
-        } else {
-          if (isStorageSupport) {
-            localStorage.setItem("userName", userName.value);
-            localStorage.setItem("email", email.value);
-          }
-        }
-      });
-
-      window.addEventListener("keydown", function (evt) {
-        if (evt.keyCode === 27) {
-          if (popup.classList.contains("modal-show")) {
-            evt.preventDefault();
-            popup.classList.remove("modal-show");
-            popup.classList.remove("modal-error");
-          }
-        }
-      });
-
-    </script>
+    <script src="js/popup.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/slider-promo.js"></script>
+    <script src="js/slider-service.js"></script>
 
   </body>
 </html>
