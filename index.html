@@ -6,7 +6,7 @@
     <title>HTML Academy: Техномарт</title>
     <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700,700i%7cPT+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
     <link href="css/normalize.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-min.css" rel="stylesheet">
   </head>
   <body>
     <header class="page-header">
@@ -104,17 +104,15 @@
 
         <div class="promo-block-row">
           <div class="promo-materials promo-size">
-            <div class="flag flag-new"></div>
+            <div class="flag flag-new"><span class="visually-hidden">новый</span> </div>
             <h3>Материалы</h3>
             <a href="#">На любой вкус</a>
           </div>
           <div class="promo-tools promo-size">
-            <div class="flag flag-new not-displayed"></div>
             <h3>Инструмент</h3>
             <a href="#">На все случаи</a>
           </div>
           <div class="promo-technics promo-size">
-            <div class="flag flag-new not-displayed"></div>
             <h3>Техника</h3>
             <a href="#">Для стройки</a>
           </div>
@@ -140,22 +138,20 @@
                 <a class="button" href="catalog.html">Открыть каталог</a>
               </li>
             </ul>
-            <div class="slider-nav-back" title="назад" onclick="minusSlide()"></div>
-            <div class="slider-nav-next" title="вперед" onclick="plusSlide()"></div>
+            <button class="slider-nav-back" aria-label="назад" onclick="minusSlide()"></button>
+            <button class="slider-nav-next" aria-label="вперед" onclick="plusSlide()"></button>
             <div class="slider-dots">
-              <div class="button-dot" onclick="currentSlide(1)"></div>
-              <div class="button-dot button-dot-checked" onclick="currentSlide(2)"></div>
+              <button class="button-dot" onclick="currentSlide(1)"></button>
+              <button class="button-dot button-dot-checked" onclick="currentSlide(2)"></button>
             </div>
           </div>
 
           <div class="promo-block-column">
             <div class="promo-discount promo-size">
-              <div class="flag flag-new not-displayed"></div>
               <h3>Скидки 50%</h3>
               <a href="#">На 350 товаров</a>
             </div>
             <div class="promo-delivery promo-size">
-              <div class="flag flag-new not-displayed"></div>
               <h3>Доставка</h3>
               <a href="#">Бесплатно</a>
             </div>
@@ -179,12 +175,10 @@
             </a>
             <span class="products-discount">32500 Р.</span>
             <p class="button red-arrow">25500 Р.</p>
-            <div class="flag flag-new not-displayed"></div>
             <div class="button-list">
               <a class="button button-green" href="#">Купить</a>
               <a class="button button-border" href="#">В закладки</a>
             </div>
-
           </li>
           <li class="products-item">
             <a href="#">
@@ -196,7 +190,6 @@
             </a>
             <span class="products-discount">22500 Р.</span>
             <p class="button red-arrow">15500 Р.</p>
-            <div class="flag flag-new not-displayed"></div>
             <div class="button-list">
               <a class="button button-green" href="#">Купить</a>
               <a class="button button-border" href="#">В закладки</a>
@@ -212,7 +205,6 @@
             </a>
             <span class="products-discount">30500 Р.</span>
             <p class="button red-arrow">25500 Р.</p>
-            <div class="flag flag-new not-displayed"></div>
             <div class="button-list">
               <a class="button button-green" href="#">Купить</a>
               <a class="button button-border" href="#">В закладки</a>
@@ -226,9 +218,8 @@
                 <span class="products-title">BFG 2000</span>
               </h3>
             </a>
-            <span class="products-discount hide">12500 Р.</span>
             <p class="button red-arrow">12500 Р.</p>
-            <div class="flag flag-new"></div>
+            <div class="flag flag-new"><span class="visually-hidden">новый</span> </div>
             <div class="button-list">
               <a class="button button-green" href="#">Купить</a>
               <a class="button button-border" href="#">В закладки</a>
@@ -447,7 +438,7 @@
         <div class="name-email">
           <p>
             <label for="input-name">Ваше имя:</label>
-            <input id="input-name" type="text" name="name" placeholder="Имя Фамилия" required>
+            <input id="input-name" type="text" name="user-name" placeholder="Имя Фамилия" required>
           </p>
           <p>
             <label for="input-mail">Ваш e-mail:</label>
@@ -472,10 +463,7 @@
       <button class="modal-close" type="button"><span class="visually-hidden">Закрыть</span></button>
     </section>
 
-    <script src="js/popup.js"></script>
-    <script src="js/map.js"></script>
-    <script src="js/slider-promo.js"></script>
-    <script src="js/slider-service.js"></script>
+    <script src="js/script.js"></script>
 
   </body>
 </html>

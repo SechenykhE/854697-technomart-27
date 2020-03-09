@@ -6,7 +6,7 @@
     <title>Каталог Техномарт</title>
     <link href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,700,700i%7cPT+Sans:400,700&display=swap&subset=cyrillic" rel="stylesheet">
     <link href="css/normalize.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-min.css" rel="stylesheet">
   </head>
   <body class="catalog-page">
     <header class="page-header">
@@ -137,8 +137,8 @@
                   <div class="scale">
                     <div class="bar"></div>
                   </div>
-                  <div class="toggle toggle-min"></div>
-                  <div class="toggle toggle-max"></div>
+                  <div class="toggle toggle-min"><span class="visually-hidden">цена от</span></div>
+                  <div class="toggle toggle-max"><span class="visually-hidden">цена до</span></div>
                 </div>
                 <div class="price-controls">
                   <label class="min-price"><span class="visually-hidden">от</span> <input name="min-price" type="text" value="0"></label>
@@ -150,47 +150,47 @@
 
           <form class="filter filter-categories" method="get" action="https://echo.htmlacademy.ru">
             <div class="filter-border">
-            <fieldset>
-              <legend>Производители:</legend>
-                <ul>
-                  <li>
-                    <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="bosch" id="filter-bosch" checked>
-                    <label for="filter-bosch">BOSCH</label>
-                  </li>
-                  <li>
-                    <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="interskol" id="filter-interskol">
-                    <label for="filter-interskol">ИНТЕРСКОЛ</label>
-                  </li>
-                  <li>
-                    <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="makita" id="filter-makita" checked>
-                    <label for="filter-makita">MAKITA</label>
-                  </li>
-                  <li>
-                    <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="dewalt" id="filter-dewalt">
-                    <label for="filter-dewalt">DEWALT</label>
-                  </li>
-                  <li>
-                    <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="hitachi" id="filter-hitachi">
-                    <label for="filter-hitachi">HITACHI</label>
-                  </li>
-                </ul>
-            </fieldset>
+              <fieldset>
+                <legend>Производители:</legend>
+                  <ul>
+                    <li>
+                      <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="bosch" id="filter-bosch" checked>
+                      <label for="filter-bosch">BOSCH</label>
+                    </li>
+                    <li>
+                      <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="interskol" id="filter-interskol">
+                      <label for="filter-interskol">ИНТЕРСКОЛ</label>
+                    </li>
+                    <li>
+                      <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="makita" id="filter-makita" checked>
+                      <label for="filter-makita">MAKITA</label>
+                    </li>
+                    <li>
+                      <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="dewalt" id="filter-dewalt">
+                      <label for="filter-dewalt">DEWALT</label>
+                    </li>
+                    <li>
+                      <input class="visually-hidden filter-input filter-input-checkbox" type="checkbox" name="hitachi" id="filter-hitachi">
+                      <label for="filter-hitachi">HITACHI</label>
+                    </li>
+                  </ul>
+              </fieldset>
             </div>
             <div class="filter-border">
-            <fieldset>
-              <legend>Питание:</legend>
-              <ul>
-                <li>
-                  <input class="visually-hidden filter-input filter-input-radio" type="radio" name="power" value="accumulator" id="filter-accumulator" checked>
-                  <label for="filter-accumulator">Аккумуляторные</label>
-                </li>
-                <li>
-                  <input class="visually-hidden filter-input filter-input-radio" type="radio" name="power" value="network" id="filter-network">
-                  <label for="filter-network">Сетевые</label>
-                </li>
-              </ul>
-            </fieldset>
-      </div>
+              <fieldset>
+                <legend>Питание:</legend>
+                <ul>
+                  <li>
+                    <input class="visually-hidden filter-input filter-input-radio" type="radio" name="power" value="accumulator" id="filter-accumulator" checked>
+                    <label for="filter-accumulator">Аккумуляторные</label>
+                  </li>
+                  <li>
+                    <input class="visually-hidden filter-input filter-input-radio" type="radio" name="power" value="network" id="filter-network">
+                    <label for="filter-network">Сетевые</label>
+                  </li>
+                </ul>
+              </fieldset>
+            </div>
             <button class="button-filter" type="submit">Показать</button>
           </form>
         </section>
@@ -210,23 +210,27 @@
               </li>
             </ul>
             <ul class="sorting-radio">
-              <li class="sorting-radio-item">
-                  <input class="visually-hidden sorting-radio-up" type="radio" name="sorting" value="up" id="filter-up" checked>
-                  <label for="filter-up">
+              <li>
+                <input class="visually-hidden sorting-radio-up" type="radio" name="sorting" value="up" id="filter-up" checked>
+                <label for="filter-up">
+                  <a class="sorting-radio-item" href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
                       <polygon fill="#231F20" points="5.5,0 0,10 11,10 "/>
                     </svg>
+                  </a>
                   </label>
                   <label class="visually-hidden" for="filter-up">По возрастанию</label>
               </li>
-              <li class="sorting-radio-item">
-                  <input class="visually-hidden sorting-radio-down" type="radio" name="sorting" value="down" id="filter-down">
-                  <label for="filter-down">
+              <li>
+                <input class="visually-hidden sorting-radio-down" type="radio" name="sorting" value="down" id="filter-down">
+                <label for="filter-down">
+                  <a class="sorting-radio-item" href="#">
                     <svg xmlns="http://www.w3.org/2000/svg" width="11" height="10" viewBox="0 0 11 10">
                       <polyline fill="#231F20" points="5.5,10 0,0 11,0 "/>
                     </svg>
-                  </label>
-                  <label class="visually-hidden" for="filter-down">По убыванию</label>
+                  </a>
+                </label>
+                <label class="visually-hidden" for="filter-down">По убыванию</label>
               </li>
             </ul>
           </section>
@@ -244,7 +248,6 @@
                 </a>
                 <span class="products-discount">22500 Р.</span>
                 <p class="button red-arrow">15500 Р.</p>
-                <div class="flag flag-new not-displayed"></div>
                 <div class="button-list">
                   <a class="button button-green add-basket-button" href="#">Купить</a>
                   <a class="button button-border" href="#">В закладки</a>
@@ -260,7 +263,6 @@
                 </a>
                 <span class="products-discount">30500 Р.</span>
                 <p class="button red-arrow">25500 Р.</p>
-                <div class="flag flag-new not-displayed"></div>
                 <div class="button-list">
                   <a class="button button-green add-basket-button" href="#">Купить</a>
                   <a class="button button-border" href="#">В закладки</a>
@@ -274,9 +276,8 @@
                     <span class="products-title">BFG 2000</span>
                   </h3>
                 </a>
-                <span class="products-discount hide">12500 P.</span>
                 <p class="button red-arrow">12500 Р.</p>
-                <div class="flag flag-new"></div>
+                <div class="flag flag-new"><span class="visually-hidden">новый</span> </div>
                 <div class="button-list">
                   <a class="button button-green add-basket-button" href="#">Купить</a>
                   <a class="button button-border" href="#">В закладки</a>
@@ -292,7 +293,6 @@
                 </a>
                 <span class="products-discount">22500 Р.</span>
                 <p class="button red-arrow">15500 Р.</p>
-                <div class="flag flag-new not-displayed"></div>
                 <div class="button-list">
                   <a class="button button-green add-basket-button" href="#">Купить</a>
                   <a class="button button-border" href="#">В закладки</a>
@@ -308,7 +308,7 @@
                 </a>
                 <span class="products-discount">30500 Р.</span>
                 <p class="button red-arrow">25500 Р.</p>
-                <div class="flag flag-new"></div>
+                <div class="flag flag-new"><span class="visually-hidden">новый</span> </div>
                 <div class="button-list">
                   <a class="button button-green add-basket-button" href="#">Купить</a>
                   <a class="button button-border" href="#">В закладки</a>
@@ -322,9 +322,7 @@
                     <span class="products-title">BFG 2000</span>
                   </h3>
                 </a>
-                <span class="products-discount hide">12500 P.</span>
                 <p class="button red-arrow">12500 Р.</p>
-                <div class="flag flag-new not-displayed"></div>
                 <div class="button-list">
                   <a class="button button-green add-basket-button" href="#">Купить</a>
                   <a class="button button-border" href="#">В закладки</a>
@@ -340,7 +338,7 @@
                 </a>
                 <span class="products-discount">22500 Р.</span>
                 <p class="button red-arrow">15500 Р.</p>
-                <div class="flag flag-new"></div>
+                <div class="flag flag-new"><span class="visually-hidden">новый</span> </div>
                 <div class="button-list">
                   <a class="button button-green add-basket-button" href="#">Купить</a>
                   <a class="button button-border" href="#">В закладки</a>
@@ -356,7 +354,6 @@
                 </a>
                 <span class="products-discount">30500 Р.</span>
                 <p class="button red-arrow">25500 Р.</p>
-                <div class="flag flag-new not-displayed"></div>
                 <div class="button-list">
                   <a class="button button-green add-basket-button" href="#">Купить</a>
                   <a class="button button-border" href="#">В закладки</a>
@@ -370,9 +367,7 @@
                     <span class="products-title">BFG 2000</span>
                   </h3>
                 </a>
-                <span class="products-discount hide">12500 P.</span>
                 <p class="button red-arrow">12500 Р.</p>
-                <div class="flag flag-new not-displayed"></div>
                 <div class="button-list">
                   <a class="button button-green add-basket-button" href="#">Купить</a>
                   <a class="button button-border" href="#">В закладки</a>
@@ -497,7 +492,7 @@
       <button class="modal-close" type="button"><span class="visually-hidden">Закрыть</span></button>
     </div>
 
-    <script src="js/add-basket.js"></script>
+    <script src="js/script.js"></script>
 
   </body>
 </html>
