@@ -100,16 +100,16 @@ img {
   box-shadow: inset 0 -5px 0 0 rgba(0, 0, 0, 0.24);
 }
 
-.header-logo:hover,
-.header-logo:focus {
+.header-logo.inner:hover,
+.header-logo.inner:focus {
   background-color: #ca2c37;
 }
 
-.header-logo:active {
+.header-logo.inner:active {
   background-color: #ba2732;
 }
 
-input[type="search"] {
+.search {
   display: block;
   width: 223px;
   height: 42px;
@@ -143,17 +143,17 @@ input[type="search"] {
   opacity: 0.3;
 }
 
-input[type="search"]:hover,
-input[type="search"]:hover + label {
+.search:hover,
+.search:hover + label {
   background-color: #212a3a;
 }
 
-input[type="search"]:hover + label svg,
-input[type="search"]:hover + label path {
+.search:hover + label svg,
+.search:hover + label path {
   opacity: 1;
 }
 
-input[type="search"]:focus {
+.search:focus {
   outline: none;
 
   color: #000000;
@@ -161,41 +161,41 @@ input[type="search"]:focus {
   background-color: #ffffff;
 }
 
-input[type="search"]:focus + label  {
+.search:focus + label {
   background-color: #ffffff;
 }
 
-input[type="search"]:focus + label svg,
-input[type="search"]:focus + label path {
+.search:focus + label svg,
+.search:focus + label path {
   fill: #ee3643;
   opacity: 1;
 }
 
-input[type="search"]::-webkit-input-placeholder {
+.search::-webkit-input-placeholder {
   color: #ffffff;
 
   opacity: 1;
 }
 
-input[type="search"]::-moz-placeholder {
+.search::-moz-placeholder {
   color: #ffffff;
 
   opacity: 1;
 }
 
-input[type="search"]:-ms-input-placeholder {
+.search:-ms-input-placeholder {
   color: #ffffff;
 
   opacity: 1;
 }
 
-input[type="search"]::-ms-input-placeholder {
+.search::-ms-input-placeholder {
   color: #ffffff;
 
   opacity: 1;
 }
 
-input[type="search"]::placeholder {
+.search::placeholder {
   color: #ffffff;
 
   opacity: 1;
@@ -231,14 +231,13 @@ input[type="search"]::placeholder {
   height: 16px;
 }
 
-.basket svg{
+.basket svg {
   position: absolute;
   top: 12px;
   left: 17px;
 
   width: 15px;
   height: 15px;
-
 }
 
 .bookmark path,
@@ -326,7 +325,7 @@ input[type="search"]::placeholder {
   text-align: left;
 }
 
-.header-contact p{
+.header-contact p {
   margin: 0;
   padding: 0;
 
@@ -712,7 +711,7 @@ input[type="search"]::placeholder {
   background-color: rgba(0, 0, 0, 0.25);
 }
 
-.slider-item .button{
+.slider-item .button {
   position: absolute;
 }
 
@@ -788,7 +787,6 @@ input[type="search"]::placeholder {
   margin: 0;
   margin-right: 6px;
 
-
   background-color: #ffffff;
   border: 0;
   border-radius: 50%;
@@ -861,6 +859,7 @@ input[type="search"]::placeholder {
   min-height: 318px;
   margin-right: 20px;
   margin-bottom: 20px;
+  padding-bottom: 10px;
 
   text-align: center;
 }
@@ -966,9 +965,8 @@ input[type="search"]::placeholder {
   color: #000000;
 }
 
-.products-item .button.red-arrow {
-  position: absolute;
-  bottom: 20px;
+.products-item .button.button-not-discount {
+  margin-top: 46px;
 }
 
 .red-arrow {
@@ -1000,7 +998,7 @@ input[type="search"]::placeholder {
   left: 41px;
 }
 
-a.button-green {
+.button-list a.button-green {
   color: #ffffff;
 }
 
@@ -1038,7 +1036,7 @@ a.button-green {
 }
 
 .button.button-green:hover::before,
-.button.button-green:focus::before{
+.button.button-green:focus::before {
   opacity: 1;
 }
 
@@ -1052,7 +1050,7 @@ a.button-green {
   opacity: 1;
 }
 
-a.button-border {
+.button-list a.button-border {
   color: #32425c;
 }
 
@@ -1091,12 +1089,18 @@ a.button-border {
   box-shadow: 0 10px 25px 0 rgba(41, 52, 73, 0.5);
 }
 
-.products-item:hover img.products-opacity,
+.products-item:hover img.products-opacity {
+  opacity: 0;
+}
+
 .products-item:focus-within img.products-opacity {
   opacity: 0;
 }
 
-.products-item:hover .button-list,
+.products-item:hover .button-list {
+  opacity: 1;
+}
+
 .products-item:focus-within .button-list {
   opacity: 1;
 }
@@ -1179,6 +1183,7 @@ a.button-border {
   border: 0;
   -webkit-box-shadow: 0 4px 10px 0 rgba(41, 52, 73, 0.5);
   box-shadow: 0 4px 10px 0 rgba(41, 52, 73, 0.5);
+  opacity: 0.3;
 }
 
 .service-container {
@@ -1236,6 +1241,20 @@ a.button-border {
   list-style: none;
 }
 
+.service-list::before {
+  content: "";
+
+  position: absolute;
+  top: -45px;
+  left: 230px;
+
+  width: 10px;
+  height: 279px;
+
+  background-image: url("../img/gradient.png");
+  background-repeat: no-repeat;
+}
+
 .service-container-column {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1245,12 +1264,6 @@ a.button-border {
 
 .service-column div {
   margin-bottom: 104px;
-}
-
-.service-container-column img {
-  position: absolute;
-  top: -48px;
-  left: 230px;
 }
 
 .service-item button {
@@ -1434,10 +1447,10 @@ a.button-border {
 .about-company .transport-company {
   margin: 0;
   margin-top: -4px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   padding: 0;
   padding-left: 35px;
-  padding-bottom: 20px;
+  /*padding-bottom: 40px;*/
 
   list-style: none;
 }
@@ -1467,11 +1480,6 @@ a.button-border {
   background-color: #ee3643;
 }
 
-.index-columns .button {
-  position: absolute;
-  bottom: 0;
-}
-
 .about-company .button {
   width: 220px;
   padding-left: 40px;
@@ -1489,13 +1497,9 @@ a.button-border {
   max-width: 180px;
 }
 
-.contacts a.contacts-map {
-  padding-bottom: 40px;
-}
-
 .contacts img {
   margin-top: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 37px;
 
   background-color: #f4f2ed;
 }
@@ -1701,7 +1705,7 @@ a.button-border {
 
 .social-button:hover,
 .social-button:focus,
-.social-button:active{
+.social-button:active {
   background-color: #ee3643;
 }
 
@@ -1730,7 +1734,7 @@ a.button-border {
   text-decoration: none;
 }
 
-p.feedback {
+.footer-information-container p.feedback {
   margin-left: auto;
   margin-right: 76px
 }
@@ -1824,90 +1828,6 @@ p.feedback {
   width: 100%;
   padding-left: 13px;
   padding-top: 7px;
-}
-
-.form-email input[type="text"]::-webkit-input-placeholder {
-  font-size: 13px;
-  line-height: 32px;
-  color: #a9a9a9;
-  vertical-align: center;
-}
-
-.form-email input[type="email"]::-webkit-input-placeholder {
-  font-size: 13px;
-  line-height: 32px;
-  color: #a9a9a9;
-  vertical-align: center;
-}
-
-.form-email textarea::-webkit-input-placeholder {
-  font-size: 13px;
-  line-height: 32px;
-  color: #a9a9a9;
-  vertical-align: center;
-}
-
-.form-email input[type="text"]::-moz-placeholder {
-  font-size: 13px;
-  line-height: 32px;
-  color: #a9a9a9;
-  vertical-align: center;
-}
-
-.form-email input[type="email"]::-moz-placeholder {
-  font-size: 13px;
-  line-height: 32px;
-  color: #a9a9a9;
-  vertical-align: center;
-}
-
-.form-email textarea::-moz-placeholder {
-  font-size: 13px;
-  line-height: 32px;
-  color: #a9a9a9;
-  vertical-align: center;
-}
-
-.form-email input[type="text"]:-ms-input-placeholder {
-  font-size: 13px;
-  line-height: 32px;
-  color: #a9a9a9;
-  vertical-align: center;
-}
-
-.form-email input[type="email"]:-ms-input-placeholder {
-  font-size: 13px;
-  line-height: 32px;
-  color: #a9a9a9;
-  vertical-align: center;
-}
-
-.form-email textarea:-ms-input-placeholder {
-  font-size: 13px;
-  line-height: 32px;
-  color: #a9a9a9;
-  vertical-align: center;
-}
-
-.form-email input[type="text"]::-ms-input-placeholder {
-  font-size: 13px;
-  line-height: 32px;
-  color: #a9a9a9;
-  vertical-align: center;
-}
-
-.form-email input[type="email"]::-ms-input-placeholder {
-  font-size: 13px;
-  line-height: 32px;
-  color: #a9a9a9;
-  vertical-align: center;
-}
-
-.form-email textarea::-ms-input-placeholder {
-  font-size: 13px;
-  line-height: 32px;
-  color: #a9a9a9;
-  vertical-align: center;
 }
 
 .form-email input[type="text"]::-webkit-input-placeholder {
@@ -2035,26 +1955,6 @@ p.feedback {
   line-height: 19px;
 }
 
-.form-email textarea::-webkit-input-placeholder {
-  line-height: 19px;
-}
-
-.form-email textarea::-moz-placeholder {
-  line-height: 19px;
-}
-
-.form-email textarea:-ms-input-placeholder {
-  line-height: 19px;
-}
-
-.form-email textarea::-ms-input-placeholder {
-  line-height: 19px;
-}
-
-.form-email textarea::placeholder {
-  line-height: 19px;
-}
-
 .modal-bottom {
   position: absolute;
   left: 0;
@@ -2149,6 +2049,7 @@ p.feedback {
   padding-top: 12px;
   padding-left: 46px;
   padding-right: 45px;
+  padding-bottom: 12px;
   margin-bottom: 5px;
 
   overflow: hidden;
@@ -2167,7 +2068,7 @@ p.feedback {
 }
 
 .user-name svg,
-.user-name path{
+.user-name path {
   position: absolute;
   top: 13px;
   left: 12px;
@@ -2196,7 +2097,7 @@ p.feedback {
 .logout:hover path,
 .logout:hover polygon,
 .logout:focus path,
-.logout:focus polygon{
+.logout:focus polygon {
   fill: #32425c;
 }
 
@@ -2211,11 +2112,9 @@ p.feedback {
 }
 
 .user-cabinet {
-  position: relative;
-  left: 17px;
-
   margin: 0;
   padding: 0;
+  margin-left: 17px;
 
   list-style: none;
 }
@@ -2634,7 +2533,7 @@ p.feedback {
 .filter-input-checkbox:hover + label::before,
 .filter-input-checkbox:focus + label::before,
 .filter-input-checkbox:checked:hover + label::after,
-.filter-input-checkbox:checked:focus + label::after{
+.filter-input-checkbox:checked:focus + label::after {
   opacity: 0.79;
 }
 
@@ -2748,7 +2647,7 @@ p.feedback {
   width: 43px;
 }
 
-.sorting-radio li{
+.sorting-radio li {
   -ms-flex-item-align: start;
   align-self: flex-start;
   margin-top: 5px;
@@ -2789,7 +2688,7 @@ p.feedback {
 .sorting-radio-item:hover polygon,
 .sorting-radio-item:focus polygon,
 .sorting-radio-item:hover polyline,
-.sorting-radio-item:focus polyline{
+.sorting-radio-item:focus polyline {
   fill: #231f20;
 }
 
@@ -2806,11 +2705,12 @@ p.feedback {
   flex-wrap: wrap;
   width: 700px;
   margin-bottom: 32px;
+  padding-bottom: 10px;
 }
 
 .catalog .products-item {
   width: 220px;
-  height: 318px;
+  min-height: 318px;
   margin-right: 20px;
   margin-bottom: 20px;
 }
@@ -2855,7 +2755,7 @@ p.feedback {
   text-align: center;
 }
 
-button.button-filter,
+.filter button.button-filter,
 .pagination a {
   font-size: 13px;
   line-height: 18px;
@@ -2876,13 +2776,13 @@ button.button-filter,
 
 .pagination a:not(.pagination-current):hover,
 .pagination a:not(.pagination-current):focus,
-button.button-filter:hover,
-button.button-filter:focus {
+.filter button.button-filter:hover,
+.filter button.button-filter:focus {
   border: 1px solid #bdc6ca;
 }
 
 .pagination a:not(.pagination-current):active,
-button.button-filter:active {
+.filter button.button-filter:active {
   border: 1px solid #ee3643;
 }
 
